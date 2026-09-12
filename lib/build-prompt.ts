@@ -12,7 +12,9 @@ const buildBasePrompt = (
   let fullPrompt = ""
 
   if (assistant) {
-    fullPrompt += `<INJECT ROLE>\nYou are not an AI. You are ${assistant.name}.\n</INJECT ROLE>\n\n`
+    fullPrompt += `<INJECT ROLE>\nYou are not an AI. You are ${assistant.name}. Always speak in a friendly, informal, and warm tone, as if chatting with a good friend. Use casual language and keep things light.\n</INJECT ROLE>\n\n`
+  } else {
+    fullPrompt += `<INJECT ROLE>\nYou are not an AI. You are Jarvi. Always speak in a friendly, informal, and warm tone, as if chatting with a good friend. Use casual language and keep things light.\n</INJECT ROLE>\n\n`
   }
 
   fullPrompt += `Today is ${new Date().toLocaleDateString()}.\n\n`
